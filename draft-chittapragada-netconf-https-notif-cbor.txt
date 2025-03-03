@@ -116,11 +116,11 @@ Table of Contents
 3.  Terminology
 
    This document uses the following terms defined in Section 2,3 and 4
-   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15].  1.  Capabilities
-   Resource 2.  Relay-Notification 3.  Event Notification
+   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15].  - Capabilities
+   Resource - Relay-Notification - Event Notification
 
    The following term(s) are defined in Subscription to YANG
-   Notifications [RFC8639].  1.  Publisher 2.  Receiver 3.  Subscribed
+   Notifications [RFC8639].  - Publisher - Receiver - Subscribed
    Notifications
 
 4.  CBOR Encoding
@@ -224,7 +224,9 @@ Table of Contents
 
 Acknowledgments
 
-   TODO acknowledge.
+   The authors acknowlegde the support of the authors of RFC XXXX
+   [I-D.draft-ietf-netconf-https-notif-15] for the encouragment and
+   guidance provided to draft this document .
 
 Authors' Addresses
 
