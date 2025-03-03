@@ -361,10 +361,11 @@ A1                                      # map(1)
    [I-D.ietf-netconf-http-client-server].  The following entry is added
    :
 
-   Record: URN: urn:ietf:params:yang-notif:https-
-   capability:encoding:cbor Reference: RFC XXXX:An HTTPS-based Transport
-   for YANG Notifications Description: Identifies support for CBOR-
-   encoded notifications.
+   Record:
+
+   URN: urn:ietf:params:yang-notif:https-capability:encoding:cbor
+   Reference: RFC XXXX:An HTTPS-based Transport for YANG Notifications
+   Description: Identifies support for CBOR-encoded notifications.
 
 8.  References
 
