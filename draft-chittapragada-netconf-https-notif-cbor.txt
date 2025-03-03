@@ -16,8 +16,8 @@ Expires: 4 September 2025                                      H. Arshad
 
 Abstract
 
-   This document extends RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]
-   by introducing CBOR encoding for YANG notifications over HTTPS in
+   This document extends [I-D.draft-ietf-netconf-https-notif-15] by
+   introducing CBOR encoding for YANG notifications over HTTPS in
    addition to the existing JSON and XML encoding schemes.
 
 About This Document
@@ -32,8 +32,9 @@ About This Document
    notif-cbor/.
 
    Discussion of this document takes place on the NETCONF Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   mailing list (mailto:netconf@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/netconf/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/netconf/.
 
    Source for this draft and an issue tracker can be found at
    https://github.com/meherrushi/draft-chittapragada-netconf-https-
@@ -99,13 +100,13 @@ Table of Contents
    [I-D.draft-ietf-netconf-https-notif-15] which supports transfer of
    YANG notifications over HTTPS using JSON and XML encoding schemes.
 
-   In [I-D.draft-ietf-netconf-https-notif-15]RFCXXXX, the capabilities
-   HTTP-target resource allows a publisher to retrieve supported
-   encoding formats via a GET request, while the relay-notification
-   resource enables the publisher to send YANG notifications via POST
-   requests.  These requests and responses use different content types
-   based on the selected encoding scheme.  This document defines support
-   for using CBOR encoding as mentioned in section 1 of
+   In [I-D.draft-ietf-netconf-https-notif-15], the capabilities HTTP-
+   target resource allows a publisher to retrieve supported encoding
+   formats via a GET request, while the relay-notification resource
+   enables the publisher to send YANG notifications via POST requests.
+   These requests and responses use different content types based on the
+   selected encoding scheme.  This document defines support for using
+   CBOR encoding as mentioned in section 1 of
    [I-D.draft-ietf-netconf-https-notif-15]
 
    CBOR offers an efficient and compact representation of YANG
@@ -125,7 +126,7 @@ Table of Contents
 3.  Terminology
 
    This document uses the following terms defined in Section 2,3 and 4
-   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]:
+   of [I-D.draft-ietf-netconf-https-notif-15]:
 
    *  Capabilities Resource
 
@@ -154,7 +155,7 @@ Table of Contents
 
    YANG notifications can be encoded in CBOR using Names or SIDs in
    keys.  Notifications encoded using names is similar to JSON encoding
-   as defined in Section 3.4 and 4.3 of RFCXXXX
+   as defined in Section 3.4 and 4.3 of
    [I-D.draft-ietf-netconf-https-notif-15].  Notification encoded using
    YANG-SIDs replaces the names of the keys of the CBOR encoded message
    for a 63 bit unsigned integer.  In this case, the keys of the encoded
@@ -347,9 +348,9 @@ A1                                      # map(1)
 6.  Security Considerations
 
    Addition of the CBOR encoding introduces no specific security
-   exposures or risks other that the ones mentioned in [RFC9254] and RFC
-   XXXX [I-D.draft-ietf-netconf-https-notif-15] (An HTTPS-based
-   Transport for YANG Notifications)
+   exposures or risks other that the ones mentioned in [RFC9254] and
+   [I-D.draft-ietf-netconf-https-notif-15] (An HTTPS-based Transport for
+   YANG Notifications)
 
 7.  IANA Considerations
 
@@ -418,9 +419,8 @@ A1                                      # map(1)
 Acknowledgments
 
    The authors acknowlegde the support of the Kent Watsen and Mahesh
-   Jethanandani, the authors of RFC XXXX
-   [I-D.draft-ietf-netconf-https-notif-15] for the encouragment provided
-   to draft this document.
+   Jethanandani, the authors of [I-D.draft-ietf-netconf-https-notif-15]
+   for the encouragment provided to draft this document.
 
 Authors' Addresses
 
