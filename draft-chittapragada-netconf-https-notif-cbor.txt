@@ -12,7 +12,7 @@ Expires: 4 September 2025                                      H. Arshad
 
 
      CBOR Encoding for HTTPS-based Transport for YANG Notifications
-              draft-chittapragada-netconf-https-notif-cbor
+          draft-chittapragada-netconf-https-notif-cbor-latest
 
 Abstract
 
@@ -29,7 +29,7 @@ About This Document
    cbor/draft-chittapragada-netconf-https-notif-cbor.html.  Status
    information for this document may be found at
    https://datatracker.ietf.org/doc/draft-chittapragada-netconf-https-
-   notif/.
+   notif-cbor/.
 
    Discussion of this document takes place on the NETCONF Working Group
    mailing list (mailto:WG@example.com), which is archived at
