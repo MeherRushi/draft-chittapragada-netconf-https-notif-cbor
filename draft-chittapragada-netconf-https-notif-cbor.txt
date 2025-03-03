@@ -117,12 +117,22 @@ Table of Contents
 3.  Terminology
 
    This document uses the following terms defined in Section 2,3 and 4
-   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]: - Capabilities
-   Resource - Relay-Notification - Event Notification
+   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]:
+
+   *  Capabilities Resource
+
+   *  Relay-Notification
+
+   *  Event Notification
 
    The following term(s) are defined in Subscription to YANG
-   Notifications [RFC8639]: - Publisher - Receiver - Subscribed
-   Notifications
+   Notifications [RFC8639]:
+
+   *  Publisher
+
+   *  Receiver
+
+   *  Subscribed Notifications
 
 4.  CBOR Encoding
 
@@ -141,8 +151,11 @@ Table of Contents
    publisher wants to receive the capabilities response in CBOR but if
    not supported then in XML or JSON in that order.
 
-   GET /some/path/capabilities HTTP/1.1 Host: example.com Accept:
-   application/cbor, application/xml;0.9, application/json;q=0.5
+   GET /some/path/capabilities HTTP/1.1
+
+   Host: example.com
+
+   Accept: application/cbor, application/xml;0.9, application/json;q=0.5
 
 4.2.  Response
 
