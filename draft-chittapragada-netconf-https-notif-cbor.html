@@ -1349,17 +1349,17 @@ GET /some/path/capabilities HTTP/1.1
 <pre>
 A1                                      # map(1)
    75                                   # text(21)
-        72656365697665722D6361706162696C6974696573 # "receiver-capabilities"
+      72656365697665722D6361706162696C6974696573 # "receiver-capabilities"
    A1                                   # map(1)
-        73                              # text(19)
-        72656365697665722D6361706162696C697479 # "receiver-capability"
-        83                              # array(3)
-        78 36                           # text(54)
-                75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A6A736F6E # "urn:ietf:capability:https-notif-receiver:encoding:json"
-        78 35                           # text(53)
-                75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A786D6C # "urn:ietf:capability:https-notif-receiver:encoding:xml"
-        78 36                           # text(54)
-                75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A63626F72 # "urn:ietf:capability:https-notif-receiver:encoding:cbor"
+      73                                # text(19)
+         72656365697665722D6361706162696C697479 # "receiver-capability"
+      83                                # array(3)
+         78 36                          # text(54)
+            75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A6A736F6E # "urn:ietf:capability:https-notif-receiver:encoding:json"
+         78 35                          # text(53)
+            75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A786D6C # "urn:ietf:capability:https-notif-receiver:encoding:xml"
+         78 36                          # text(54)
+            75726E3A696574663A6361706162696C6974793A68747470732D6E6F7469662D72656365697665723A656E636F64696E673A63626F72 # "urn:ietf:capability:https-notif-receiver:encoding:cbor"
 </pre><a href="#section-4.2.1-4" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1404,30 +1404,30 @@ POST /some/path/relay-notification HTTP/1.1
 <pre>
 A1                                      # map(1)
    78 1D                                # text(29)
-        696574662D68747470732D6E6F7469663A6E6F74696669636174696F6E # "ietf-https-notif:notification"
+      696574662D68747470732D6E6F7469663A6E6F74696669636174696F6E # "ietf-https-notif:notification"
    A2                                   # map(2)
-        69                              # text(9)
-        6576656E7454696D65              # "eventTime"
-        74                              # text(20)
-        323031332D31322D32315430303A30313A30305A # "2013-12-21T00:01:00Z"
-        71                              # text(17)
-        6578616D706C652D6D6F643A6576656E74 # "example-mod:event"
-        A3                              # map(3)
-        68                              # text(8)
-                7365766572697479                # "severity"
-        65                              # text(5)
-                6D616A6F72                      # "major"
-        6B                              # text(11)
-                6576656E742D636C617373          # "event-class"
-        65                              # text(5)
-                6661756C74                      # "fault"
-        70                              # text(16)
-                7265706F7274696E672D656E74697479 # "reporting-entity"
-        A1                              # map(1)
-                64                              # text(4)
-                63617264                # "card"
-                69                              # text(9)
-                45746865726E657430      # "Ethernet0"
+      69                                # text(9)
+         6576656E7454696D65             # "eventTime"
+      74                                # text(20)
+         323031332D31322D32315430303A30313A30305A # "2013-12-21T00:01:00Z"
+      71                                # text(17)
+         6578616D706C652D6D6F643A6576656E74 # "example-mod:event"
+      A3                                # map(3)
+         68                             # text(8)
+            7365766572697479            # "severity"
+         65                             # text(5)
+            6D616A6F72                  # "major"
+         6B                             # text(11)
+            6576656E742D636C617373      # "event-class"
+         65                             # text(5)
+            6661756C74                  # "fault"
+         70                             # text(16)
+            7265706F7274696E672D656E74697479 # "reporting-entity"
+         A1                             # map(1)
+            64                          # text(4)
+               63617264                 # "card"
+            69                          # text(9)
+               45746865726E657430       # "Ethernet0"
 </pre><a href="#section-4.3.1-5" class="pilcrow">¶</a>
 </div>
 </section>
@@ -1480,27 +1480,27 @@ A1                                      # map(1)
 A1                                      # map(1)
    19 0A28                              # unsigned(2600)
    A2                                   # map(2)
-        01                              # unsigned(1)
-        74                              # text(20)
-        323031332D31322D32315430303A30313A30305A # "2013-12-21T00:01:00Z"
-        71                              # text(17)
-        6578616D706C652D6D6F643A6576656E74 # "example-mod:event"
-        A3                              # map(3)
-        68                              # text(8)
-                7365766572697479                # "severity"
-        65                              # text(5)
-                6D616A6F72                      # "major"
-        6B                              # text(11)
-                6576656E742D636C617373          # "event-class"
-        65                              # text(5)
-                6661756C74                      # "fault"
-        70                              # text(16)
-                7265706F7274696E672D656E74697479 # "reporting-entity"
-        A1                              # map(1)
-                64                              # text(4)
-                63617264                # "card"
-                69                              # text(9)
-                45746865726E657430      # "Ethernet0"
+      01                                # unsigned(1)
+      74                                # text(20)
+         323031332D31322D32315430303A30313A30305A # "2013-12-21T00:01:00Z"
+      71                                # text(17)
+         6578616D706C652D6D6F643A6576656E74 # "example-mod:event"
+      A3                                # map(3)
+         68                             # text(8)
+            7365766572697479            # "severity"
+         65                             # text(5)
+            6D616A6F72                  # "major"
+         6B                             # text(11)
+            6576656E742D636C617373      # "event-class"
+         65                             # text(5)
+            6661756C74                  # "fault"
+         70                             # text(16)
+            7265706F7274696E672D656E74697479 # "reporting-entity"
+         A1                             # map(1)
+            64                          # text(4)
+               63617264                 # "card"
+            69                          # text(9)
+               45746865726E657430       # "Ethernet0"
 </pre><a href="#section-4.3.2-6" class="pilcrow">¶</a>
 </div>
 </section>
