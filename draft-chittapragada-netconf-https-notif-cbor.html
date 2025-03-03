@@ -4,16 +4,20 @@
 <meta charset="utf-8">
 <meta content="Common,Latin" name="scripts">
 <meta content="initial-scale=1.0" name="viewport">
-<title>TODO - Your title</title>
-<meta content="Your Name Here" name="author">
+<title>CBOR Encoding for HTTPS-based Transport for YANG Notifications</title>
+<meta content="Bharadwaja Meherrushi Chittapragada" name="author">
+<meta content="Siddharth Bhat" name="author">
+<meta content="Vartika T Rao" name="author">
+<meta content="Hayyan Arshad" name="author">
+<meta content="Mohit P. Tahiliani" name="author">
 <meta content="
-       TODO Abstract 
+       This document extends RFCXXXX (I-D.draft-ietf-netconf-https-notif-15) by introducing CBOR encoding for YANG notifications over HTTPS in addition to the existing JSON and XML encoding schemes. 
     " name="description">
 <meta content="xml2rfc 3.28.0" name="generator">
-<meta content="next generation" name="keyword">
-<meta content="unicorn" name="keyword">
-<meta content="sparkling distributed ledger" name="keyword">
-<meta content="draft-todo-yourname-protocol-latest" name="ietf.draft">
+<meta content="cbor" name="keyword">
+<meta content="https" name="keyword">
+<meta content="yang" name="keyword">
+<meta content="draft-chittapragada-netconf-https-notif-cbor" name="ietf.draft">
 <!-- Generator version information:
   xml2rfc 3.28.0
     Python 3.12.9
@@ -29,7 +33,7 @@
     setuptools 70.3.0
     wcwidth 0.2.13
 -->
-<link href="draft-todo-yourname-protocol.xml" rel="alternate" type="application/rfc+xml">
+<link href="draft-chittapragada-netconf-https-notif-cbor.xml" rel="alternate" type="application/rfc+xml">
 <link href="#copyright" rel="license">
 <style type="text/css">@font-face {
   font-family: 'Lora';
@@ -1045,11 +1049,11 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <table class="ears">
 <thead><tr>
 <td class="left">Internet-Draft</td>
-<td class="center">TODO - Abbreviation</td>
+<td class="center">https-notif-cbor</td>
 <td class="right">March 2025</td>
 </tr></thead>
 <tfoot><tr>
-<td class="left">Here</td>
+<td class="left">Chittapragada, et al.</td>
 <td class="center">Expires 4 September 2025</td>
 <td class="right">[Page]</td>
 </tr></tfoot>
@@ -1058,30 +1062,46 @@ svg :is([fill="white"], [fill^="#fff"]) {
 <div id="internal-metadata" class="document-information">
 <dl id="identifiers">
 <dt class="label-workgroup">Workgroup:</dt>
-<dd class="workgroup">WG Working Group</dd>
+<dd class="workgroup">NETCONF Working Group</dd>
 <dt class="label-internet-draft">Internet-Draft:</dt>
-<dd class="internet-draft">draft-todo-yourname-protocol-latest</dd>
+<dd class="internet-draft">draft-chittapragada-netconf-https-notif-cbor</dd>
 <dt class="label-published">Published:</dt>
 <dd class="published">
 <time datetime="2025-03-03" class="published">3 March 2025</time>
     </dd>
 <dt class="label-intended-status">Intended Status:</dt>
-<dd class="intended-status">Informational</dd>
+<dd class="intended-status">Standards Track</dd>
 <dt class="label-expires">Expires:</dt>
 <dd class="expires"><time datetime="2025-09-04">4 September 2025</time></dd>
-<dt class="label-authors">Author:</dt>
+<dt class="label-authors">Authors:</dt>
 <dd class="authors">
 <div class="author">
-      <div class="author-name">Y. N. Here</div>
-<div class="org">Your Organization Here</div>
+      <div class="author-name">B. M. Chittapragada</div>
+<div class="org">National Institute of Technology Karnataka, Surathkal</div>
+</div>
+<div class="author">
+      <div class="author-name">S. Bhat</div>
+<div class="org">National Institute of Technology Karnataka, Surathkal</div>
+</div>
+<div class="author">
+      <div class="author-name">V. T. Rao</div>
+<div class="org">National Institute of Technology Karnataka, Surathkal</div>
+</div>
+<div class="author">
+      <div class="author-name">H. Arshad</div>
+<div class="org">National Institute of Technology Karnataka, Surathkal</div>
+</div>
+<div class="author">
+      <div class="author-name">M. P. Tahiliani</div>
+<div class="org">National Institute of Technology Karnataka, Surathkal</div>
 </div>
 </dd>
 </dl>
 </div>
-<h1 id="title">TODO - Your title</h1>
+<h1 id="title">CBOR Encoding for HTTPS-based Transport for YANG Notifications</h1>
 <section id="section-abstract">
       <h2 id="abstract"><a href="#abstract" class="selfRef">Abstract</a></h2>
-<p id="section-abstract-1">TODO Abstract<a href="#section-abstract-1" class="pilcrow">¶</a></p>
+<p id="section-abstract-1">This document extends RFCXXXX (I-D.draft-ietf-netconf-https-notif-15) by introducing CBOR encoding for YANG notifications over HTTPS in addition to the existing JSON and XML encoding schemes.<a href="#section-abstract-1" class="pilcrow">¶</a></p>
 </section>
 <section class="note rfcEditorRemove" id="section-note.1">
       <h2 id="name-about-this-document">
@@ -1089,14 +1109,14 @@ svg :is([fill="white"], [fill^="#fff"]) {
       </h2>
 <p id="section-note.1-1">This note is to be removed before publishing as an RFC.<a href="#section-note.1-1" class="pilcrow">¶</a></p>
 <p id="section-note.1-2">
-        The latest revision of this draft can be found at <span><a href="https://example.com/LATEST">https://example.com/LATEST</a></span>.
-        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-todo-yourname-protocol/">https://datatracker.ietf.org/doc/draft-todo-yourname-protocol/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
+        The latest revision of this draft can be found at <span><a href="https://meherrushi.github.io/draft-chittapragada-netconf-https-notif-cbor/draft-chittapragada-netconf-https-notif-cbor.html">https://meherrushi.github.io/draft-chittapragada-netconf-https-notif-cbor/draft-chittapragada-netconf-https-notif-cbor.html</a></span>.
+        Status information for this document may be found at <span><a href="https://datatracker.ietf.org/doc/draft-chittapragada-netconf-https-notif/">https://datatracker.ietf.org/doc/draft-chittapragada-netconf-https-notif/</a></span>.<a href="#section-note.1-2" class="pilcrow">¶</a></p>
 <p id="section-note.1-3">
         Discussion of this document takes place on the
-        WG Working Group mailing list (<span><a href="mailto:WG@example.com">mailto:WG@example.com</a></span>),
+        NETCONF Working Group mailing list (<span><a href="mailto:WG@example.com">mailto:WG@example.com</a></span>),
         which is archived at <span><a href="https://example.com/WG">https://example.com/WG</a></span>.<a href="#section-note.1-3" class="pilcrow">¶</a></p>
 <p id="section-note.1-4">Source for this draft and an issue tracker can be found at
-        <span><a href="https://github.com/USER/REPO">https://github.com/USER/REPO</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
+        <span><a href="https://github.com/meherrushi/draft-chittapragada-netconf-https-notif-cbor">https://github.com/meherrushi/draft-chittapragada-netconf-https-notif-cbor</a></span>.<a href="#section-note.1-4" class="pilcrow">¶</a></p>
 </section>
 <div id="status-of-memo">
 <section id="section-boilerplate.1">
@@ -1153,19 +1173,38 @@ svg :is([fill="white"], [fill^="#fff"]) {
             <p id="section-toc.1-1.2.1" class="keepWithNext"><a href="#section-2" class="auto internal xref">2</a>.  <a href="#name-conventions-and-definitions" class="internal xref">Conventions and Definitions</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.3">
-            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
+            <p id="section-toc.1-1.3.1" class="keepWithNext"><a href="#section-3" class="auto internal xref">3</a>.  <a href="#name-terminology" class="internal xref">Terminology</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4">
-            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
+            <p id="section-toc.1-1.4.1"><a href="#section-4" class="auto internal xref">4</a>.  <a href="#name-cbor-encoding" class="internal xref">CBOR Encoding</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.1">
+                <p id="section-toc.1-1.4.2.1.1"><a href="#section-4.1" class="auto internal xref">4.1</a>.  <a href="#name-request" class="internal xref">Request</a></p>
+</li>
+              <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2">
+                <p id="section-toc.1-1.4.2.2.1"><a href="#section-4.2" class="auto internal xref">4.2</a>.  <a href="#name-response" class="internal xref">Response</a></p>
+<ul class="compact toc ulBare ulEmpty">
+<li class="compact toc ulBare ulEmpty" id="section-toc.1-1.4.2.2.2.1">
+                    <p id="section-toc.1-1.4.2.2.2.1.1"><a href="#section-4.2.1" class="auto internal xref">4.2.1</a>.  <a href="#name-cbor-using-names-as-keys" class="internal xref">CBOR using names as keys</a></p>
+</li>
+                </ul>
+</li>
+            </ul>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.5">
-            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+            <p id="section-toc.1-1.5.1"><a href="#section-5" class="auto internal xref">5</a>.  <a href="#name-security-considerations" class="internal xref">Security Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.6">
-            <p id="section-toc.1-1.6.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+            <p id="section-toc.1-1.6.1"><a href="#section-6" class="auto internal xref">6</a>.  <a href="#name-iana-considerations" class="internal xref">IANA Considerations</a></p>
 </li>
           <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.7">
-            <p id="section-toc.1-1.7.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-address" class="internal xref">Author's Address</a></p>
+            <p id="section-toc.1-1.7.1"><a href="#section-7" class="auto internal xref">7</a>.  <a href="#name-normative-references" class="internal xref">Normative References</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.8">
+            <p id="section-toc.1-1.8.1"><a href="#appendix-A" class="auto internal xref"></a><a href="#name-acknowledgments" class="internal xref">Acknowledgments</a></p>
+</li>
+          <li class="compact toc ulBare ulEmpty" id="section-toc.1-1.9">
+            <p id="section-toc.1-1.9.1"><a href="#appendix-B" class="auto internal xref"></a><a href="#name-authors-addresses" class="internal xref">Authors' Addresses</a></p>
 </li>
         </ul>
 </nav>
@@ -1176,7 +1215,9 @@ svg :is([fill="white"], [fill^="#fff"]) {
       <h2 id="name-introduction">
 <a href="#section-1" class="section-number selfRef">1. </a><a href="#name-introduction" class="section-name selfRef">Introduction</a>
       </h2>
-<p id="section-1-1">TODO Introduction<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-1">RFCXXXX <span>[<a href="#I-D.draft-ietf-netconf-https-notif-15" class="cite xref">I-D.draft-ietf-netconf-https-notif-15</a>]</span> introduces a framework for the transfer of YANG notifications over HTTPS using JSON and XML encoding schemes. This document extends RFCXXXX <span>[<a href="#I-D.draft-ietf-netconf-https-notif-15" class="cite xref">I-D.draft-ietf-netconf-https-notif-15</a>]</span> by introducing CBOR encoding for event notifications over HTTPS in addition to the existing encoding schemes.<a href="#section-1-1" class="pilcrow">¶</a></p>
+<p id="section-1-2">In RFCXXXX, the capabilities HTTP-target resource allows a publisher to retrieve supported encoding formats via a GET request, while the relay-notification resource enables the publisher to send YANG notifications via POST requests. These requests and responses use different content types based on the selected encoding scheme. CBOR offers a more efficient and compact representation of YANG notifications.<a href="#section-1-2" class="pilcrow">¶</a></p>
+<p id="section-1-3">Examples of the GET and POST request and reply encoded in CBOR are also provided in this document.<a href="#section-1-3" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="conventions-and-definitions">
@@ -1190,35 +1231,125 @@ described in BCP 14 <span>[<a href="#RFC2119" class="cite xref">RFC2119</a>]</s
 appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶</a></p>
 </section>
 </div>
-<div id="security-considerations">
+<div id="terminology">
 <section id="section-3">
-      <h2 id="name-security-considerations">
-<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      <h2 id="name-terminology">
+<a href="#section-3" class="section-number selfRef">3. </a><a href="#name-terminology" class="section-name selfRef">Terminology</a>
       </h2>
-<p id="section-3-1">TODO Security<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-1">This document uses the following terms defined in Section 2,3 and 4 of RFCXXXX <span>[<a href="#I-D.draft-ietf-netconf-https-notif-15" class="cite xref">I-D.draft-ietf-netconf-https-notif-15</a>]</span>. 
+   1. Capabilities Resource
+   2. Relay-Notification
+   3. Event Notification<a href="#section-3-1" class="pilcrow">¶</a></p>
+<p id="section-3-2">The following term(s) are defined in Subscription to YANG Notifications <span>[<a href="#RFC8639" class="cite xref">RFC8639</a>]</span>.
+   1. Publisher
+   2. Receiver
+   3. Subscribed Notifications<a href="#section-3-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="cbor-encoding">
+<section id="section-4">
+      <h2 id="name-cbor-encoding">
+<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-cbor-encoding" class="section-name selfRef">CBOR Encoding</a>
+      </h2>
+<p id="section-4-1">YANG notifications can be encoded in CBOR using Names or SIDs in keys. Notifications encoded using names is similar to JSON encoding as defined in Section 3.4 and 4.3 of RFCXXXX <span>[<a href="#I-D.draft-ietf-netconf-https-notif-15" class="cite xref">I-D.draft-ietf-netconf-https-notif-15</a>]</span>. Notification encoded using YANG-SIDs replaces the names of the keys of the CBOR encoded message for a 63 bit unsigned integer.  In this case, the keys of the encoded data use the SID value as defined in Section 3.2 of <span>[<a href="#RFC9254" class="cite xref">RFC9254</a>]</span>.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<div id="request">
+<section id="section-4.1">
+        <h3 id="name-request">
+<a href="#section-4.1" class="section-number selfRef">4.1. </a><a href="#name-request" class="section-name selfRef">Request</a>
+        </h3>
+<p id="section-4.1-1">The publisher sends a request to the receiver to learn its capabilities. In the below example, the “Accept” states that the publisher wants to receive the capabilities response in CBOR but if not supported then in XML or JSON in that order.<a href="#section-4.1-1" class="pilcrow">¶</a></p>
+<p id="section-4.1-2">GET /some/path/capabilities HTTP/1.1
+   Host: example.com
+   Accept: application/cbor, application/xml;0.9, application/json;q=0.5<a href="#section-4.1-2" class="pilcrow">¶</a></p>
+</section>
+</div>
+<div id="response">
+<section id="section-4.2">
+        <h3 id="name-response">
+<a href="#section-4.2" class="section-number selfRef">4.2. </a><a href="#name-response" class="section-name selfRef">Response</a>
+        </h3>
+<p id="section-4.2-1">If the receiver is able to reply using “application/cbor” and assuming it is capable of receiving JSON, XML and CBOR encoded messages the response would look like this<a href="#section-4.2-1" class="pilcrow">¶</a></p>
+<div id="cbor-using-names-as-keys">
+<section id="section-4.2.1">
+          <h4 id="name-cbor-using-names-as-keys">
+<a href="#section-4.2.1" class="section-number selfRef">4.2.1. </a><a href="#name-cbor-using-names-as-keys" class="section-name selfRef">CBOR using names as keys</a>
+          </h4>
+<p id="section-4.2.1-1">Diagnostic Notation:<a href="#section-4.2.1-1" class="pilcrow">¶</a></p>
+<div class="lang-http-message sourcecode" id="section-4.2.1-2">
+<pre>
+   HTTP/1.1 200 OK
+   Date: Tue, 4 March 2025 20:33:30 GMT
+   Server: example-server
+   Cache-Control: no-cache
+   Content-Type: application/json
+   ~~~ json
+   {
+   "receiver-capabilities": {
+     "receiver-capability": [
+       "urn:ietf:capability:https-notif-receiver:encoding:json",
+       "urn:ietf:capability:https-notif-receiver:encoding:xml",
+       "urn:ietf:capability:https-notif-receiver:encoding:cbor"
+        ]
+      }
+   }
+   ~~~
+</pre><a href="#section-4.2.1-2" class="pilcrow">¶</a>
+</div>
+</section>
+</div>
+</section>
+</div>
+</section>
+</div>
+<div id="security-considerations">
+<section id="section-5">
+      <h2 id="name-security-considerations">
+<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-security-considerations" class="section-name selfRef">Security Considerations</a>
+      </h2>
+<p id="section-5-1">Addition of the CBOR encoding introduces no specific security exposures or risks other that the ones mentioned in <span>[<a href="#RFC9254" class="cite xref">RFC9254</a>]</span> and RFC XXXX <span>[<a href="#I-D.draft-ietf-netconf-https-notif-15" class="cite xref">I-D.draft-ietf-netconf-https-notif-15</a>]</span> (An HTTPS-based Transport for YANG Notifications)<a href="#section-5-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="iana-considerations">
-<section id="section-4">
+<section id="section-6">
       <h2 id="name-iana-considerations">
-<a href="#section-4" class="section-number selfRef">4. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
+<a href="#section-6" class="section-number selfRef">6. </a><a href="#name-iana-considerations" class="section-name selfRef">IANA Considerations</a>
       </h2>
-<p id="section-4-1">This document has no IANA actions.<a href="#section-4-1" class="pilcrow">¶</a></p>
+<p id="section-6-1">This document has no IANA actions.<a href="#section-6-1" class="pilcrow">¶</a></p>
 </section>
 </div>
 <div id="sec-normative-references">
-<section id="section-5">
+<section id="section-7">
       <h2 id="name-normative-references">
-<a href="#section-5" class="section-number selfRef">5. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
+<a href="#section-7" class="section-number selfRef">7. </a><a href="#name-normative-references" class="section-name selfRef">Normative References</a>
       </h2>
 <dl class="references">
+<dt id="I-D.draft-ietf-netconf-https-notif-15">[I-D.draft-ietf-netconf-https-notif-15]</dt>
+      <dd>
+<span class="refAuthor">Jethanandani, M.</span> and <span class="refAuthor">K. Watsen</span>, <span class="refTitle">"An HTTPS-based Transport for YANG Notifications"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-https-notif-15</span>, <time datetime="2024-02-01" class="refDate">1 February 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-https-notif-15">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-https-notif-15</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="I-D.ietf-netconf-http-client-server-15">[I-D.ietf-netconf-http-client-server-15]</dt>
+      <dd>
+<span class="refAuthor">Watsen, K.</span>, <span class="refTitle">"YANG Groupings for HTTP 1.1/2.0 Clients and HTTP Servers"</span>, <span class="refContent">Work in Progress</span>, <span class="seriesInfo">Internet-Draft, draft-ietf-netconf-http-client-server-15</span>, <time datetime="2024-01-26" class="refDate">26 January 2024</time>, <span>&lt;<a href="https://datatracker.ietf.org/doc/html/draft-ietf-netconf-http-client-server-15">https://datatracker.ietf.org/doc/html/draft-ietf-netconf-http-client-server-15</a>&gt;</span>. </dd>
+<dd class="break"></dd>
 <dt id="RFC2119">[RFC2119]</dt>
       <dd>
 <span class="refAuthor">Bradner, S.</span>, <span class="refTitle">"Key words for use in RFCs to Indicate Requirement Levels"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 2119</span>, <span class="seriesInfo">DOI 10.17487/RFC2119</span>, <time datetime="1997-03" class="refDate">March 1997</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc2119">https://www.rfc-editor.org/rfc/rfc2119</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 <dt id="RFC8174">[RFC8174]</dt>
-    <dd>
+      <dd>
 <span class="refAuthor">Leiba, B.</span>, <span class="refTitle">"Ambiguity of Uppercase vs Lowercase in RFC 2119 Key Words"</span>, <span class="seriesInfo">BCP 14</span>, <span class="seriesInfo">RFC 8174</span>, <span class="seriesInfo">DOI 10.17487/RFC8174</span>, <time datetime="2017-05" class="refDate">May 2017</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8174">https://www.rfc-editor.org/rfc/rfc8174</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8639">[RFC8639]</dt>
+      <dd>
+<span class="refAuthor">Voit, E.</span>, <span class="refAuthor">Clemm, A.</span>, <span class="refAuthor">Gonzalez Prieto, A.</span>, <span class="refAuthor">Nilsen-Nygaard, E.</span>, and <span class="refAuthor">A. Tripathy</span>, <span class="refTitle">"Subscription to YANG Notifications"</span>, <span class="seriesInfo">RFC 8639</span>, <span class="seriesInfo">DOI 10.17487/RFC8639</span>, <time datetime="2019-09" class="refDate">September 2019</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8639">https://www.rfc-editor.org/rfc/rfc8639</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC8949">[RFC8949]</dt>
+      <dd>
+<span class="refAuthor">Bormann, C.</span> and <span class="refAuthor">P. Hoffman</span>, <span class="refTitle">"Concise Binary Object Representation (CBOR)"</span>, <span class="seriesInfo">STD 94</span>, <span class="seriesInfo">RFC 8949</span>, <span class="seriesInfo">DOI 10.17487/RFC8949</span>, <time datetime="2020-12" class="refDate">December 2020</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc8949">https://www.rfc-editor.org/rfc/rfc8949</a>&gt;</span>. </dd>
+<dd class="break"></dd>
+<dt id="RFC9254">[RFC9254]</dt>
+    <dd>
+<span class="refAuthor">Veillette, M., Ed.</span>, <span class="refAuthor">Petrov, I., Ed.</span>, <span class="refAuthor">Pelov, A.</span>, <span class="refAuthor">Bormann, C.</span>, and <span class="refAuthor">M. Richardson</span>, <span class="refTitle">"Encoding of Data Modeled with YANG in the Concise Binary Object Representation (CBOR)"</span>, <span class="seriesInfo">RFC 9254</span>, <span class="seriesInfo">DOI 10.17487/RFC9254</span>, <time datetime="2022-07" class="refDate">July 2022</time>, <span>&lt;<a href="https://www.rfc-editor.org/rfc/rfc9254">https://www.rfc-editor.org/rfc/rfc9254</a>&gt;</span>. </dd>
 <dd class="break"></dd>
 </dl>
 </section>
@@ -1233,15 +1364,47 @@ appear in all capitals, as shown here.<a href="#section-2-1" class="pilcrow">¶<
 </div>
 <div id="authors-addresses">
 <section id="appendix-B">
-      <h2 id="name-authors-address">
-<a href="#name-authors-address" class="section-name selfRef">Author's Address</a>
+      <h2 id="name-authors-addresses">
+<a href="#name-authors-addresses" class="section-name selfRef">Authors' Addresses</a>
       </h2>
 <address class="vcard">
-        <div dir="auto" class="left"><span class="fn nameRole">Your Name Here</span></div>
-<div dir="auto" class="left"><span class="org">Your Organization Here</span></div>
+        <div dir="auto" class="left"><span class="fn nameRole">Bharadwaja Meherrushi Chittapragada</span></div>
+<div dir="auto" class="left"><span class="org">National Institute of Technology Karnataka, Surathkal</span></div>
 <div class="email">
 <span>Email:</span>
-<a href="mailto:your.email@example.com" class="email">your.email@example.com</a>
+<a href="mailto:meherrushi2@gmail.com" class="email">meherrushi2@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Siddharth Bhat</span></div>
+<div dir="auto" class="left"><span class="org">National Institute of Technology Karnataka, Surathkal</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:siddharth.bhat10@gmail.com" class="email">siddharth.bhat10@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Vartika T Rao</span></div>
+<div dir="auto" class="left"><span class="org">National Institute of Technology Karnataka, Surathkal</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:vartikatrao@gmail.com" class="email">vartikatrao@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Hayyan Arshad</span></div>
+<div dir="auto" class="left"><span class="org">National Institute of Technology Karnataka, Surathkal</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:hayyanhamnah@gmail.com" class="email">hayyanhamnah@gmail.com</a>
+</div>
+</address>
+<address class="vcard">
+        <div dir="auto" class="left"><span class="fn nameRole">Mohit P. Tahiliani</span></div>
+<div dir="auto" class="left"><span class="org">National Institute of Technology Karnataka, Surathkal</span></div>
+<div class="email">
+<span>Email:</span>
+<a href="mailto:tahiliani@nitk.edu.in" class="email">tahiliani@nitk.edu.in</a>
 </div>
 </address>
 </section>
