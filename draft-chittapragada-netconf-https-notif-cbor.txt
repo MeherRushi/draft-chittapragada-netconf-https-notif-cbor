@@ -94,24 +94,25 @@ Table of Contents
 
 1.  Introduction
 
-   RFCXXXX [I-D.draft-ietf-netconf-https-notif-15] introduces a
-   framework for the transfer of YANG notifications over HTTPS using
-   JSON and XML encoding schemes.  This document extends RFCXXXX
-   [I-D.draft-ietf-netconf-https-notif-15] by introducing CBOR encoding
-   for event notifications over HTTPS in addition to the existing
-   encoding schemes.
+   This document introduces a CBOR encoding scheme for event
+   notifications over HTTPS by using the framework proposed in
+   [I-D.draft-ietf-netconf-https-notif-15] which supports transfer of
+   YANG notifications over HTTPS using JSON and XML encoding schemes.
 
-   In RFCXXXX, the capabilities HTTP-target resource allows a publisher
-   to retrieve supported encoding formats via a GET request, while the
-   relay-notification resource enables the publisher to send YANG
-   notifications via POST requests.  These requests and responses use
-   different content types based on the selected encoding scheme.
+   In [I-D.draft-ietf-netconf-https-notif-15]RFCXXXX, the capabilities
+   HTTP-target resource allows a publisher to retrieve supported
+   encoding formats via a GET request, while the relay-notification
+   resource enables the publisher to send YANG notifications via POST
+   requests.  These requests and responses use different content types
+   based on the selected encoding scheme.  This document defines support
+   for using CBOR encoding as mentioned in section 1 of
+   [I-D.draft-ietf-netconf-https-notif-15]
 
-   CBOR offers a more efficient and compact representation of YANG
+   CBOR offers an efficient and compact representation of YANG
    notifications.
 
-   This document provides description and examples of the GET and POST
-   request and reply encoded in CBOR
+   Examples of the GET and POST request and reply encoded in CBOR are
+   also provided.
 
 2.  Conventions and Definitions
 
@@ -141,6 +142,14 @@ Table of Contents
 
    *  Subscribed Notifications
 
+   The following term(s) are defined in Encoding of Data Modeled with
+   YANG in the Concise Binary Object Representation (CBOR) [RFC9254]:
+
+   *  Diagnostic Notifications
+
+   *  YANG Schema Item iDentifier (or "YANG SID" or simply "SID"):
+      63-bit unsigned integer used to identify different YANG items.
+
 4.  CBOR Encoding
 
    YANG notifications can be encoded in CBOR using Names or SIDs in
@@ -159,9 +168,7 @@ Table of Contents
    not supported then in XML or JSON in that order.
 
    GET /some/path/capabilities HTTP/1.1
-
       Host: example.com
-
       Accept: application/cbor, application/xml;0.9, application/json;q=0.5
 
 4.2.  Capabilities Response
@@ -215,9 +222,7 @@ A1                                      # map(1)
 4.3.1.  CBOR encoding using names as keys
 
    POST /some/path/relay-notification HTTP/1.1
-
       Host: example.com
-
       Content-Type: application/cbor
 
    Diagnostic notation:
@@ -235,18 +240,32 @@ A1                                      # map(1)
 
    Cbor Encoding:
 
-   A1 # map(1) 78 1D # text(29)
-   696574662D68747470732D6E6F7469663A6E6F74696669636174696F6E # "ietf-
-   https-notif:notification" A2 # map(2) 69 # text(9) 6576656E7454696D65
-   # "eventTime" 74 # text(20) 323031332D31322D32315430303A30313A30305A
-   # "2013-12-21T00:01:00Z" 71 # text(17)
-   6578616D706C652D6D6F643A6576656E74 # "example-mod:event" A3 # map(3)
-   68 # text(8) 7365766572697479 # "severity" 65 # text(5) 6D616A6F72 #
-   "major" 6B # text(11) 6576656E742D636C617373 # "event-class" 65 #
-   text(5) 6661756C74 # "fault" 70 # text(16)
-   7265706F7274696E672D656E74697479 # "reporting-entity" A1 # map(1) 64
-   # text(4) 63617264 # "card" 69 # text(9) 45746865726E657430 #
-   "Ethernet0"
+A1                                      # map(1)
+   78 1D                                # text(29)
+        696574662D68747470732D6E6F7469663A6E6F74696669636174696F6E # "ietf-https-notif:notification"
+   A2                                   # map(2)
+        69                              # text(9)
+        6576656E7454696D65              # "eventTime"
+        74                              # text(20)
+        323031332D31322D32315430303A30313A30305A # "2013-12-21T00:01:00Z"
+        71                              # text(17)
+        6578616D706C652D6D6F643A6576656E74 # "example-mod:event"
+        A3                              # map(3)
+        68                              # text(8)
+                7365766572697479                # "severity"
+        65                              # text(5)
+                6D616A6F72                      # "major"
+        6B                              # text(11)
+                6576656E742D636C617373          # "event-class"
+        65                              # text(5)
+                6661756C74                      # "fault"
+        70                              # text(16)
+                7265706F7274696E672D656E74697479 # "reporting-entity"
+        A1                              # map(1)
+                64                              # text(4)
+                63617264                # "card"
+                69                              # text(9)
+                45746865726E657430      # "Ethernet0"
 
 4.3.2.  CBOR encoding using SIDs as keys
 
@@ -266,11 +285,23 @@ A1                                      # map(1)
    The above is assuming the YANG module for event notifications has a
    corresponding .sid file with these entries
 
-   ~~~sid files "item": [ { "namespace": "module", "identifier": "ietf-
-   notification", "sid": "2600" }, { "namespace": "data", "identifier":
-   "/ietf-notification:notification", "sid": "2601" }, { "namespace":
-   "data", "identifier": "/ietf-notification:notification/eventTime",
-   "sid": "2602" } ] ~~~
+   "item": [
+         {
+           "namespace": "module",
+           "identifier": "ietf-notification",
+           "sid": "2600"
+         },
+         {
+           "namespace": "data",
+           "identifier": "/ietf-notification:notification",
+           "sid": "2601"
+         },
+         {
+           "namespace": "data",
+           "identifier": "/ietf-notification:notification/eventTime",
+           "sid": "2602"
+         }
+       ]
 
    CBOR Encoding:
 
@@ -329,13 +360,10 @@ A1                                      # map(1)
    [I-D.ietf-netconf-http-client-server].  The following entry is added
    :
 
-   Record:
-
-   URN: urn:ietf:params:yang-notif:https-capability:encoding:cbor
-
-   Reference: RFC XXXX:An HTTPS-based Transport for YANG Notifications
-
-   Description: Identifies support for CBOR-encoded notifications.
+   Record: URN: urn:ietf:params:yang-notif:https-
+   capability:encoding:cbor Reference: RFC XXXX:An HTTPS-based Transport
+   for YANG Notifications Description: Identifies support for CBOR-
+   encoded notifications.
 
 8.  References
 
