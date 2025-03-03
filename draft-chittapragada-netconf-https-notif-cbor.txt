@@ -16,7 +16,7 @@ Expires: 4 September 2025                                      H. Arshad
 
 Abstract
 
-   This document extends RFCXXXX (I-D.draft-ietf-netconf-https-notif-15)
+   This document extends RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]
    by introducing CBOR encoding for YANG notifications over HTTPS in
    addition to the existing JSON and XML encoding schemes.
 
@@ -98,12 +98,13 @@ Table of Contents
    to retrieve supported encoding formats via a GET request, while the
    relay-notification resource enables the publisher to send YANG
    notifications via POST requests.  These requests and responses use
-   different content types based on the selected encoding scheme.  CBOR
-   offers a more efficient and compact representation of YANG
+   different content types based on the selected encoding scheme.
+
+   CBOR offers a more efficient and compact representation of YANG
    notifications.
 
-   Examples of the GET and POST request and reply encoded in CBOR are
-   also provided in this document.
+   This document provides description and examples of the GET and POST
+   request and reply encoded in CBOR
 
 2.  Conventions and Definitions
 
@@ -116,11 +117,11 @@ Table of Contents
 3.  Terminology
 
    This document uses the following terms defined in Section 2,3 and 4
-   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15].  - Capabilities
+   of RFCXXXX [I-D.draft-ietf-netconf-https-notif-15]: - Capabilities
    Resource - Relay-Notification - Event Notification
 
    The following term(s) are defined in Subscription to YANG
-   Notifications [RFC8639].  - Publisher - Receiver - Subscribed
+   Notifications [RFC8639]: - Publisher - Receiver - Subscribed
    Notifications
 
 4.  CBOR Encoding
@@ -158,7 +159,6 @@ Table of Contents
       Server: example-server
       Cache-Control: no-cache
       Content-Type: application/json
-      ~~~ json
       {
       "receiver-capabilities": {
         "receiver-capability": [
@@ -168,7 +168,6 @@ Table of Contents
            ]
          }
       }
-      ~~~
 
 5.  Security Considerations
 
@@ -189,13 +188,6 @@ Table of Contents
               draft-ietf-netconf-https-notif-15, 1 February 2024,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
               https-notif-15>.
-
-   [I-D.ietf-netconf-http-client-server-15]
-              Watsen, K., "YANG Groupings for HTTP 1.1/2.0 Clients and
-              HTTP Servers", Work in Progress, Internet-Draft, draft-
-              ietf-netconf-http-client-server-15, 26 January 2024,
-              <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              http-client-server-15>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
