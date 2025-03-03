@@ -417,9 +417,10 @@ A1                                      # map(1)
 
 Acknowledgments
 
-   The authors acknowlegde the support of the authors of RFC XXXX
-   [I-D.draft-ietf-netconf-https-notif-15] for the encouragment and
-   guidance provided to draft this document .
+   The authors acknowlegde the support of the Kent Watsen and Mahesh
+   Jethanandani, the authors of RFC XXXX
+   [I-D.draft-ietf-netconf-https-notif-15] for the encouragment provided
+   to draft this document.
 
 Authors' Addresses
 
