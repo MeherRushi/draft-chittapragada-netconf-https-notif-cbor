@@ -3,9 +3,13 @@
 
 
 NETCONF Working Group                                B. M. Chittapragada
-Internet-Draft                                                   S. Bhat
-Intended status: Standards Track                               V. T. Rao
-Expires: 4 September 2025                                      H. Arshad
+Internet-Draft                                                          
+Intended status: Standards Track                                 S. Bhat
+Expires: 4 September 2025                                               
+                                                               V. T. Rao
+                                                                        
+                                                               H. Arshad
+                                                                        
                                                          M. P. Tahiliani
                    National Institute of Technology Karnataka, Surathkal
                                                             3 March 2025
@@ -76,7 +80,7 @@ Table of Contents
    1.  Introduction
    2.  Conventions and Definitions
    3.  Terminology
-   4.  CBOR Encoding
+   4.  CBOR Encoding of the notification(s)
      4.1.  Capabilities Request
      4.2.  Capabilities Response
        4.2.1.  CBOR using names as keys
@@ -151,15 +155,16 @@ Table of Contents
    *  YANG Schema Item iDentifier (or "YANG SID" or simply "SID"):
       63-bit unsigned integer used to identify different YANG items.
 
-4.  CBOR Encoding
+4.  CBOR Encoding of the notification(s)
 
    YANG notifications can be encoded in CBOR using Names or SIDs in
    keys.  Notifications encoded using names is similar to JSON encoding
    as defined in Section 3.4 and 4.3 of
    [I-D.draft-ietf-netconf-https-notif-15].  Notification encoded using
    YANG-SIDs replaces the names of the keys of the CBOR encoded message
-   for a 63 bit unsigned integer.  In this case, the keys of the encoded
-   data use the SID value as defined in Section 3.2 of [RFC9254].
+   with a 63 bit unsigned integer.  In this case, the term 'SID' is
+   defined in Section 3.2 of [RFC9254], and the keys of the encoded data
+   use SID value as mentioned in 4.3.2 of this document.
 
 4.1.  Capabilities Request
 
@@ -361,10 +366,9 @@ A1                                      # map(1)
    [I-D.ietf-netconf-http-client-server].  The following entry is added
    :
 
-   Record:
-
-   URN: urn:ietf:params:yang-notif:https-capability:encoding:cbor
-   Reference: RFC XXXX:An HTTPS-based Transport for YANG Notifications
+Record:
+   URN:         urn:ietf:params:yang-notif:https-capability:encoding:cbor
+   Reference:   RFC XXXX:An HTTPS-based Transport for YANG Notifications
    Description: Identifies support for CBOR-encoded notifications.
 
 8.  References
@@ -419,29 +423,25 @@ A1                                      # map(1)
 
 Acknowledgments
 
-   The authors acknowlegde the support of the Kent Watsen and Mahesh
+   The authors acknowlegde the support of Kent Watsen and Mahesh
    Jethanandani, the authors of [I-D.draft-ietf-netconf-https-notif-15]
-   for the encouragment provided to draft this document.
+   for their guidance and support provided to draft this document.
 
 Authors' Addresses
 
    Bharadwaja Meherrushi Chittapragada
-   National Institute of Technology Karnataka, Surathkal
    Email: meherrushi2@gmail.com
 
 
    Siddharth Bhat
-   National Institute of Technology Karnataka, Surathkal
    Email: siddharth.bhat10@gmail.com
 
 
    Vartika T Rao
-   National Institute of Technology Karnataka, Surathkal
    Email: vartikatrao@gmail.com
 
 
    Hayyan Arshad
-   National Institute of Technology Karnataka, Surathkal
    Email: hayyanhamnah@gmail.com
 
 
