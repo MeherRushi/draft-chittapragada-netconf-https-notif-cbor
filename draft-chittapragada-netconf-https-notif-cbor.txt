@@ -2,17 +2,17 @@
 
 
 
-NETCONF Working Group                                B. M. Chittapragada
+Network Configuration                                B. M. Chittapragada
 Internet-Draft                                                          
 Intended status: Standards Track                                 S. Bhat
-Expires: 4 September 2025                                               
+Expires: 15 September 2025                                              
                                                                V. T. Rao
                                                                         
                                                                H. Arshad
                                                                         
                                                          M. P. Tahiliani
                    National Institute of Technology Karnataka, Surathkal
-                                                            3 March 2025
+                                                           14 March 2025
 
 
      CBOR Encoding for HTTPS-based Transport for YANG Notifications
@@ -29,16 +29,20 @@ About This Document
    This note is to be removed before publishing as an RFC.
 
    The latest revision of this draft can be found at
-   https://example.com/LATEST.  Status information for this document may
-   be found at https://datatracker.ietf.org/doc/draft-chittapragada-
-   netconf-https-notif-cbor/.
+   https://MeherRushi.github.io/draft-chittapragada-netconf-https-notif-
+   cbor/draft-chittapragada-netconf-https-notif-cbor.html.  Status
+   information for this document may be found at
+   https://datatracker.ietf.org/doc/draft-chittapragada-netconf-https-
+   notif-cbor/.
 
-   Discussion of this document takes place on the WG Working Group
-   mailing list (mailto:WG@example.com), which is archived at
-   https://example.com/WG.
+   Discussion of this document takes place on the Network Configuration
+   mailing list (mailto:netconf@ietf.org), which is archived at
+   https://mailarchive.ietf.org/arch/browse/netconf/.  Subscribe at
+   https://www.ietf.org/mailman/listinfo/netconf/.
 
    Source for this draft and an issue tracker can be found at
-   https://github.com/USER/REPO.
+   https://github.com/MeherRushi/draft-chittapragada-netconf-https-
+   notif-cbor.
 
 Status of This Memo
 
@@ -55,7 +59,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 4 September 2025.
+   This Internet-Draft will expire on 15 September 2025.
 
 Copyright Notice
 
@@ -274,7 +278,7 @@ A1                                      # map(1)
    Diagnostic Notation:
 
       {
-       2600: {
+       2601: {
           1: "2013-12-21T00:01:00Z",
           "example-mod:event" : {
             "event-class" : "fault",
