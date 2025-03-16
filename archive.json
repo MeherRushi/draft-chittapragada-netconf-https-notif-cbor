@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-03-13T01:14:04.601335+00:00",
+  "timestamp": "2025-03-16T01:18:38.692558+00:00",
   "repo": "MeherRushi/draft-chittapragada-netconf-https-notif-cbor",
   "labels": [
     {
@@ -50,5 +50,34 @@
     }
   ],
   "issues": [],
-  "pulls": []
+  "pulls": [
+    {
+      "number": 1,
+      "id": "PR_kwDOOCa7nM6OgNx6",
+      "title": "Fix: Typo in SiDs",
+      "url": "https://github.com/MeherRushi/draft-chittapragada-netconf-https-notif-cbor/pull/1",
+      "state": "MERGED",
+      "author": "Sidhub723",
+      "authorAssociation": "COLLABORATOR",
+      "assignees": [],
+      "labels": [],
+      "body": "",
+      "createdAt": "2025-03-13T12:27:27Z",
+      "updatedAt": "2025-03-14T13:33:42Z",
+      "baseRepository": "MeherRushi/draft-chittapragada-netconf-https-notif-cbor",
+      "baseRefName": "main",
+      "baseRefOid": "7b14158185b733e1c0a20e2eaa00051ed69287dd",
+      "headRepository": "Sidhub723/draft-chittapragada-netconf-https-notif-cbor",
+      "headRefName": "main",
+      "headRefOid": "43914dd66264cd065240fec194c10cf9f6a129d1",
+      "closedAt": "2025-03-14T13:33:42Z",
+      "mergedAt": "2025-03-14T13:33:42Z",
+      "mergedBy": "MeherRushi",
+      "mergeCommit": {
+        "oid": "dc82f8e21c71f03e3cef2cb4aadf7dd456afe1ba"
+      },
+      "comments": [],
+      "reviews": []
+    }
+  ]
 }
