@@ -3,13 +3,10 @@
 
 
 Network Configuration                                B. M. Chittapragada
-Internet-Draft                                                          
-Intended status: Standards Track                                 S. Bhat
-Expires: 8 January 2026                                                 
-                                                               V. T. Rao
-                                                                        
-                                                               H. Arshad
-                                                                        
+Internet-Draft                                                   S. Bhat
+Intended status: Standards Track                               V. T. Rao
+Expires: 8 January 2026                                        H. Arshad
+                              National Institute of Technology Karnataka
                                                          M. P. Tahiliani
                    National Institute of Technology Karnataka, Surathkal
                                                              7 July 2025
@@ -430,18 +427,22 @@ Acknowledgments
 Authors' Addresses
 
    Bharadwaja Meherrushi Chittapragada
+   National Institute of Technology Karnataka
    Email: meherrushi2@gmail.com
 
 
    Siddharth Bhat
+   National Institute of Technology Karnataka
    Email: siddharth.bhat10@gmail.com
 
 
    Vartika T Rao
+   National Institute of Technology Karnataka
    Email: vartikatrao@gmail.com
 
 
    Hayyan Arshad
+   National Institute of Technology Karnataka
    Email: hayyanhamnah@gmail.com
 
 
