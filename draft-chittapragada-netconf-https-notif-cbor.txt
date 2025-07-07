@@ -5,14 +5,14 @@
 Network Configuration                                B. M. Chittapragada
 Internet-Draft                                                          
 Intended status: Standards Track                                 S. Bhat
-Expires: 15 September 2025                                              
+Expires: 8 January 2026                                                 
                                                                V. T. Rao
                                                                         
                                                                H. Arshad
                                                                         
                                                          M. P. Tahiliani
                    National Institute of Technology Karnataka, Surathkal
-                                                           14 March 2025
+                                                             7 July 2025
 
 
      CBOR Encoding for HTTPS-based Transport for YANG Notifications
@@ -59,7 +59,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 15 September 2025.
+   This Internet-Draft will expire on 8 January 2026.
 
 Copyright Notice
 
@@ -385,9 +385,9 @@ Record:
    [I-D.ietf-netconf-http-client-server]
               Watsen, K., "YANG Groupings for HTTP Clients and HTTP
               Servers", Work in Progress, Internet-Draft, draft-ietf-
-              netconf-http-client-server-25, 12 February 2025,
+              netconf-http-client-server-28, 6 June 2025,
               <https://datatracker.ietf.org/doc/html/draft-ietf-netconf-
-              http-client-server-25>.
+              http-client-server-28>.
 
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
