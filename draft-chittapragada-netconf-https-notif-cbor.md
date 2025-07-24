@@ -28,27 +28,27 @@ author:
   - name: Bharadwaja Meherrushi Chittapragada
     email: meherrushi2@gmail.com
     ins: B. M. Chittapragada
-    org: National Institute of Technology Karnataka, Surathkal
+    org: National Institute of Technology Karnataka
 
   - name: Siddharth Bhat
     email: siddharth.bhat10@gmail.com
     ins: S. Bhat
-    org: National Institute of Technology Karnataka, Surathkal
+    org: National Institute of Technology Karnataka
 
   - name: Vartika T Rao
     email: vartikatrao@gmail.com
     ins: V. T. Rao
-    org: National Institute of Technology Karnataka, Surathkal
+    org: National Institute of Technology Karnataka
 
   - name: Hayyan Arshad
     email: hayyanhamnah@gmail.com
     ins: H. Arshad
-    org: National Institute of Technology Karnataka, Surathkal
+    org: National Institute of Technology Karnataka
 
   - name: Mohit P. Tahiliani
     email: tahiliani@nitk.edu.in
     ins: M. P. Tahiliani
-    org: National Institute of Technology Karnataka, Surathkal
+    org: National Institute of Technology Karnataka
 
 normative:
  I-D.draft-ietf-netconf-https-notif:
@@ -348,51 +348,43 @@ A1                                      # map(1)
 
 The response on success is  "204 (No Content)". In case of corrupted or malformed event, the response is an appropriate HTTP error response.
 
-## Implementation Status
+# Implementation Status
 
 This section records the status of known implementations of the specification defined by this document at the time of posting. The information is provided to assist the IETF in evaluating the maturity and implementability of the specification. This section will be removed prior to publication as an RFC.
 
 ## Implementation: HTTPS Notification CBOR Draft Implementation
-- *Organization*:
-  National Institute of Technology Karnataka (NITK), Surathkal
 
-- *Implementation Name / Web Page*:
-  HTTPS Notification CBOR Draft Implementation
-  [https://github.com/MeherRushi/https-notif-draft-impl](https://github.com/MeherRushi/https-notif-draft-impl)
+Organization: National Institute of Technology Karnataka (NITK), Surathkal
 
-- *Description*:
-  This implementation provides a Python-based prototype of the mechanism defined in this document for transporting YANG notifications over HTTPS using JSON, XML and CBOR encoding. It supports name-based CBOR encoding (for now) and includes basic publisher and receiver roles to demonstrate end-to-end message exchange.
+Implementation Name / Web Page: [HTTPS Notification CBOR Draft Implementation](https://github.com/MeherRushi/https-notif-draft-impl)
 
-- *Maturity Level*:  Prototype
+Description: This implementation provides a Python-based prototype of the mechanism defined in this document for transporting YANG notifications over HTTPS using JSON, XML, and CBOR encoding. It currently supports name-based CBOR encoding and includes basic publisher and receiver roles to demonstrate end-to-end message exchange.
 
-- *Coverage*:
-  - Capabilities discovery via HTTP GET to /capabilities
-  - Event publication via HTTP POST to /relay-notification
-  - Support for name-based CBOR encoding (for now) as described in this document
+Maturity Level: Prototype
 
+Coverage:
+* Capabilities discovery via HTTP GET to `/capabilities`
+* Event publication via HTTP POST to `/relay-notification`
+* Support for name-based CBOR encoding (as described in this document)
 
-- *Version Compatibility*:
-  The implementation is based on  draft-ietf-netconf-https-notif-15 and draft-chittapragada-netconf-https-notif-cbor-03.
+Version Compatibility: Based on draft-ietf-netconf-https-notif-15 and draft-chittapragada-netconf-https-notif-cbor-04
 
-- *Licensing*:
-  Freely distributable under an MIT-style license.
+Licensing: Freely distributable under an MIT-style license
 
-- *Implementation Experience*:
-  - Developed and demonstrated at IETF 121 and 122 Hackathon.
-  - Worked toward enabling CBOR encoding in the libyang library as part of the hackathon effort ([slides](https://datatracker.ietf.org/meeting/123/materials/slides-123-hackathon-sessd-adding-cbor-support-in-libyang-00)).
-  - Evaluated CBOR efficiency compared to JSON and XML in constrained environments.
-  - Built tooling to simulate and measure notification transfer behavior over varying network conditions.
-  - Diagnostic encoding examples used for validation of CBOR structures.
+Implementation Experience:
+* Developed and demonstrated at IETF 121 and 122 Hackathons
+* Integrated with the libyang library to explore CBOR encoding support ([slides](https://datatracker.ietf.org/meeting/123/materials/slides-123-hackathon-sessd-adding-cbor-support-in-libyang-00))
+* Evaluated CBOR efficiency versus JSON and XML in constrained environments
+* Built tooling to simulate and measure notification transfer behavior under varying network conditions
+* Used diagnostic encoding examples to validate CBOR structures
 
-- *Contact Information*:
-  - Bharadwaja Meherrushi Chittapragada (meher.211cs216@nitk.edu.in)
-  - Vartika T Rao (vartikatrao.211it077@nitk.edu.in)
-  - Siddharth Bhat (sidbhat.211ee151@nitk.edu.in)
-  - Hayyan Arshad (hayyanarshad.211cs222@nitk.edu.in)
+Contact Information:
+* Bharadwaja Meherrushi Chittapragada – <meher.211cs216@nitk.edu.in>
+* Vartika T Rao – <vartikatrao.211it077@nitk.edu.in>
+* Siddharth Bhat – <sidbhat.211ee151@nitk.edu.in>
+* Hayyan Arshad – <hayyanarshad.211cs222@nitk.edu.in>
 
-- *Last Updated*:
-  July 24, 2025
-
+Last Updated: July 24, 2025
 
 # Security Considerations
 
