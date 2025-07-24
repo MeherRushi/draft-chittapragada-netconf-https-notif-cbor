@@ -399,8 +399,8 @@ A1                                      # map(1)
 
    *  _Description_: This implementation provides a Python-based
       prototype of the mechanism defined in this document for
-      transporting YANG notifications over HTTPS using CBOR encoding.
-      It supports both SID-based and name-based CBOR encoding and
+      transporting YANG notifications over HTTPS using JSON, XML and
+      CBOR encoding.  It supports name-based CBOR encoding (for now) and
       includes basic publisher and receiver roles to demonstrate end-to-
       end message exchange.
 
@@ -416,7 +416,8 @@ A1                                      # map(1)
          this document
 
    *  _Version Compatibility_: The implementation is based on draft-
-      chittapragada-netconf-https-notif-cbor-03.
+      ietf-netconf-https-notif-15 and draft-chittapragada-netconf-https-
+      notif-cbor-03.
 
    *  _Licensing_: Freely distributable under an MIT-style license.
 
