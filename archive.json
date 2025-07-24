@@ -1,6 +1,6 @@
 {
   "magic": "E!vIA5L86J2I",
-  "timestamp": "2025-07-22T01:27:56.271850+00:00",
+  "timestamp": "2025-07-24T01:28:08.751691+00:00",
   "repo": "MeherRushi/draft-chittapragada-netconf-https-notif-cbor",
   "labels": [
     {
@@ -84,7 +84,7 @@
       "id": "PR_kwDOOCa7nM6fsQiT",
       "title": "[fix] addressed comments ",
       "url": "https://github.com/MeherRushi/draft-chittapragada-netconf-https-notif-cbor/pull/2",
-      "state": "OPEN",
+      "state": "MERGED",
       "author": "vartikatrao",
       "authorAssociation": "COLLABORATOR",
       "assignees": [
@@ -95,19 +95,42 @@
       "labels": [],
       "body": "",
       "createdAt": "2025-07-19T17:23:01Z",
-      "updatedAt": "2025-07-20T00:56:14Z",
+      "updatedAt": "2025-07-23T19:33:31Z",
       "baseRepository": "MeherRushi/draft-chittapragada-netconf-https-notif-cbor",
       "baseRefName": "main",
       "baseRefOid": "58477645652802b314e96c7ef2b5606ccfe2a76b",
       "headRepository": "vartikatrao/draft-chittapragada-netconf-https-notif-cbor",
       "headRefName": "main",
-      "headRefOid": "58fb203236e67aebf9d69e9c63b53c13bcfdf9b7",
-      "closedAt": null,
-      "mergedAt": null,
-      "mergedBy": null,
-      "mergeCommit": null,
+      "headRefOid": "5519c15c127f11143fc1c336771d554cf86c3f38",
+      "closedAt": "2025-07-23T19:33:31Z",
+      "mergedAt": "2025-07-23T19:33:31Z",
+      "mergedBy": "MeherRushi",
+      "mergeCommit": {
+        "oid": "1bffbe309f55d20f8626cb58cdc305b6a1787784"
+      },
       "comments": [],
-      "reviews": []
+      "reviews": [
+        {
+          "id": "PRR_kwDOOCa7nM608Ekk",
+          "commit": {
+            "abbreviatedOid": "5519c15"
+          },
+          "author": "MeherRushi",
+          "authorAssociation": "OWNER",
+          "state": "APPROVED",
+          "body": "Yup, looks great now",
+          "createdAt": "2025-07-20T01:22:43Z",
+          "updatedAt": "2025-07-22T15:12:01Z",
+          "comments": [
+            {
+              "originalPosition": 119,
+              "body": "ok, I understand that the receiver's ability to reply in a certain format and it's capability for processing notifications of a certain format (which is the one it advertises) are different. Here, we seem to covering the reply format capability differences but not the receiver format capability right ? \r\n\r\nLike based on the review:\r\n> A more meaningful response would be one where the receiver is only capable of receiving CBOR. Similarly, the other meaninful response would when it does not support CBOR. Can that example be added to the document?\r\n\r\nMaybe we should include an example where `encoding:cbor` is not supported as well ?",
+              "createdAt": "2025-07-20T01:22:43Z",
+              "updatedAt": "2025-07-22T15:11:38Z"
+            }
+          ]
+        }
+      ]
     }
   ]
 }
