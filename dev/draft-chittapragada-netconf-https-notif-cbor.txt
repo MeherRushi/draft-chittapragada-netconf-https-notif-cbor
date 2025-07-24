@@ -7,7 +7,7 @@ Internet-Draft                                                   S. Bhat
 Intended status: Standards Track                               V. T. Rao
 Expires: 25 January 2026                                       H. Arshad
                                                          M. P. Tahiliani
-                   National Institute of Technology Karnataka, Surathkal
+                              National Institute of Technology Karnataka
                                                             24 July 2025
 
 
@@ -84,14 +84,14 @@ Table of Contents
        3.3.1.  CBOR encoding using names as keys
        3.3.2.  CBOR encoding using SIDs as keys
      3.4.  Relay Notification Response
-     3.5.  Implementation Status
-     3.6.  Implementation: HTTPS Notification CBOR Draft
+   4.  Implementation Status
+     4.1.  Implementation: HTTPS Notification CBOR Draft
            Implementation
-   4.  Security Considerations
-   5.  IANA Considerations
-   6.  References
-     6.1.  Normative References
-     6.2.  Informative References
+   5.  Security Considerations
+   6.  IANA Considerations
+   7.  References
+     7.1.  Normative References
+     7.2.  Informative References
    Acknowledgments
    Authors' Addresses
 
@@ -380,7 +380,7 @@ A1                                      # map(1)
    or malformed event, the response is an appropriate HTTP error
    response.
 
-3.5.  Implementation Status
+4.  Implementation Status
 
    This section records the status of known implementations of the
    specification defined by this document at the time of posting.  The
@@ -388,78 +388,60 @@ A1                                      # map(1)
    and implementability of the specification.  This section will be
    removed prior to publication as an RFC.
 
-3.6.  Implementation: HTTPS Notification CBOR Draft Implementation
+4.1.  Implementation: HTTPS Notification CBOR Draft Implementation
 
-   *  _Organization_: National Institute of Technology Karnataka (NITK),
-      Surathkal
+   Organization: National Institute of Technology Karnataka (NITK),
+   Surathkal
 
-   *  _Implementation Name / Web Page_: HTTPS Notification CBOR Draft
-      Implementation https://github.com/MeherRushi/https-notif-draft-
-      impl (https://github.com/MeherRushi/https-notif-draft-impl)
+   Implementation Name / Web Page: HTTPS Notification CBOR Draft
+   Implementation (https://github.com/MeherRushi/https-notif-draft-impl)
 
-   *  _Description_: This implementation provides a Python-based
-      prototype of the mechanism defined in this document for
-      transporting YANG notifications over HTTPS using JSON, XML and
-      CBOR encoding.  It supports name-based CBOR encoding (for now) and
-      includes basic publisher and receiver roles to demonstrate end-to-
-      end message exchange.
+   Description: This implementation provides a Python-based prototype of
+   the mechanism defined in this document for transporting YANG
+   notifications over HTTPS using JSON, XML, and CBOR encoding.  It
+   currently supports name-based CBOR encoding and includes basic
+   publisher and receiver roles to demonstrate end-to-end message
+   exchange.
 
-   *  _Maturity Level_: Prototype
+   Maturity Level: Prototype
 
-   *  _Coverage_:
+   Coverage: * Capabilities discovery via HTTP GET to /capabilities *
+   Event publication via HTTP POST to /relay-notification * Support for
+   name-based CBOR encoding (as described in this document)
 
-      -  Capabilities discovery via HTTP GET to /capabilities
+   Version Compatibility: Based on draft-ietf-netconf-https-notif-15 and
+   draft-chittapragada-netconf-https-notif-cbor-04
 
-      -  Event publication via HTTP POST to /relay-notification
+   Licensing: Freely distributable under an MIT-style license
 
-      -  Support for name-based CBOR encoding (for now) as described in
-         this document
+   Implementation Experience: * Developed and demonstrated at IETF 121
+   and 122 Hackathons * Integrated with the libyang library to explore
+   CBOR encoding support (slides
+   (https://datatracker.ietf.org/meeting/123/materials/slides-123-
+   hackathon-sessd-adding-cbor-support-in-libyang-00)) * Evaluated CBOR
+   efficiency versus JSON and XML in constrained environments * Built
+   tooling to simulate and measure notification transfer behavior under
+   varying network conditions * Used diagnostic encoding examples to
+   validate CBOR structures
 
-   *  _Version Compatibility_: The implementation is based on draft-
-      ietf-netconf-https-notif-15 and draft-chittapragada-netconf-https-
-      notif-cbor-03.
+   Contact Information: * Bharadwaja Meherrushi Chittapragada –
+   meher.211cs216@nitk.edu.in (mailto:meher.211cs216@nitk.edu.in) *
+   Vartika T Rao – vartikatrao.211it077@nitk.edu.in
+   (mailto:vartikatrao.211it077@nitk.edu.in) * Siddharth Bhat –
+   sidbhat.211ee151@nitk.edu.in (mailto:sidbhat.211ee151@nitk.edu.in) *
+   Hayyan Arshad – hayyanarshad.211cs222@nitk.edu.in
+   (mailto:hayyanarshad.211cs222@nitk.edu.in)
 
-   *  _Licensing_: Freely distributable under an MIT-style license.
+   Last Updated: July 24, 2025
 
-   *  _Implementation Experience_:
-
-      -  Developed and demonstrated at IETF 121 and 122 Hackathon.
-
-      -  Worked toward enabling CBOR encoding in the libyang library as
-         part of the hackathon effort (slides
-         (https://datatracker.ietf.org/meeting/123/materials/slides-123-
-         hackathon-sessd-adding-cbor-support-in-libyang-00)).
-
-      -  Evaluated CBOR efficiency compared to JSON and XML in
-         constrained environments.
-
-      -  Built tooling to simulate and measure notification transfer
-         behavior over varying network conditions.
-
-      -  Diagnostic encoding examples used for validation of CBOR
-         structures.
-
-   *  _Contact Information_:
-
-      -  Bharadwaja Meherrushi Chittapragada
-         (meher.211cs216@nitk.edu.in)
-
-      -  Vartika T Rao (vartikatrao.211it077@nitk.edu.in)
-
-      -  Siddharth Bhat (sidbhat.211ee151@nitk.edu.in)
-
-      -  Hayyan Arshad (hayyanarshad.211cs222@nitk.edu.in)
-
-   *  _Last Updated_: July 24, 2025
-
-4.  Security Considerations
+5.  Security Considerations
 
    Addition of the CBOR encoding introduces no specific security
    exposures or risks other that the ones mentioned in [RFC9254] and
    [I-D.draft-ietf-netconf-https-notif] (An HTTPS-based Transport for
    YANG Notifications)
 
-5.  IANA Considerations
+6.  IANA Considerations
 
    This document requests that IANA include an additional entry in the
    “Capabilities for HTTPS Notification Receivers” registry, defined in
@@ -472,9 +454,9 @@ Record:
    Reference:   RFC XXXX:An HTTPS-based Transport for YANG Notifications
    Description: Identifies support for CBOR-encoded notifications.
 
-6.  References
+7.  References
 
-6.1.  Normative References
+7.1.  Normative References
 
    [I-D.draft-ietf-netconf-https-notif]
               Jethanandani, M. and K. Watsen, "An HTTPS-based Transport
@@ -499,7 +481,7 @@ Record:
               RFC 9254, DOI 10.17487/RFC9254, July 2022,
               <https://www.rfc-editor.org/rfc/rfc9254>.
 
-6.2.  Informative References
+7.2.  Informative References
 
    [RFC3553]  Mealling, M., Masinter, L., Hardie, T., and G. Klyne, "An
               IETF URN Sub-namespace for Registered Protocol
@@ -515,25 +497,25 @@ Acknowledgments
 Authors' Addresses
 
    Bharadwaja Meherrushi Chittapragada
-   National Institute of Technology Karnataka, Surathkal
+   National Institute of Technology Karnataka
    Email: meherrushi2@gmail.com
 
 
    Siddharth Bhat
-   National Institute of Technology Karnataka, Surathkal
+   National Institute of Technology Karnataka
    Email: siddharth.bhat10@gmail.com
 
 
    Vartika T Rao
-   National Institute of Technology Karnataka, Surathkal
+   National Institute of Technology Karnataka
    Email: vartikatrao@gmail.com
 
 
    Hayyan Arshad
-   National Institute of Technology Karnataka, Surathkal
+   National Institute of Technology Karnataka
    Email: hayyanhamnah@gmail.com
 
 
    Mohit P. Tahiliani
-   National Institute of Technology Karnataka, Surathkal
+   National Institute of Technology Karnataka
    Email: tahiliani@nitk.edu.in
