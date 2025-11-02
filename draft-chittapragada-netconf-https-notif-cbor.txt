@@ -400,9 +400,9 @@ A1                                      # map(1)
    *  _Description_: This implementation provides a Python-based
       prototype of the mechanism defined in this document for
       transporting YANG notifications over HTTPS using JSON, XML and
-      CBOR encoding.  It supports name-based CBOR encoding (for now) and
-      includes basic publisher and receiver roles to demonstrate end-to-
-      end message exchange.
+      CBOR encoding.  It supports name-based CBOR encoding and includes
+      basic publisher and receiver roles to demonstrate end-to-end
+      message exchange.
 
    *  _Maturity Level_: Prototype
 
@@ -412,8 +412,8 @@ A1                                      # map(1)
 
       -  Event publication via HTTP POST to /relay-notification
 
-      -  Support for name-based CBOR encoding (for now) as described in
-         this document
+      -  Support for name-based CBOR encoding as described in this
+         document
 
    *  _Version Compatibility_: The implementation is based on draft-
       ietf-netconf-https-notif-15 and draft-chittapragada-netconf-https-
