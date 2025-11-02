@@ -5,10 +5,10 @@
 Network Configuration                                B. M. Chittapragada
 Internet-Draft                                                   S. Bhat
 Intended status: Standards Track                               V. T. Rao
-Expires: 25 January 2026                                       H. Arshad
+Expires: 6 May 2026                                            H. Arshad
                                                          M. P. Tahiliani
                    National Institute of Technology Karnataka, Surathkal
-                                                            24 July 2025
+                                                         2 November 2025
 
 
        CBOR Encoding for HTTPS-based YANG Notifications Transport
@@ -55,7 +55,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 25 January 2026.
+   This Internet-Draft will expire on 6 May 2026.
 
 Copyright Notice
 
@@ -463,9 +463,7 @@ A1                                      # map(1)
 
    This document requests that IANA include an additional entry in the
    “Capabilities for HTTPS Notification Receivers” registry, defined in
-   [I-D.draft-ietf-netconf-https-notif], within the YANG Notifications
-   registry group (as defined in [RFC3553]).  The following entry is
-   added:
+   [I-D.draft-ietf-netconf-https-notif].  The following entry is added:
 
 Record:
    URN:         urn:ietf:params:yang-notif:https-capability:encoding:cbor
